@@ -223,9 +223,6 @@ netscout.sh  (single self-contained file)
 ## 👤 Author
 
 **Edd13Mora** — Penetration Tester & Red Team Lead
-
-- 🌐 [pentester.ma](https://pentester.ma)
-- 📖 *Hack 4 Living* (upcoming book)
 - 🐙 [github.com/edd13mora](https://github.com/edd13mora)
 
 ---

@@ -250,7 +250,7 @@ scan_host_web() {
     local ssl_info
     ssl_info=$(echo "" | timeout "$TIMEOUT" openssl s_client -connect "$ip:$port" -servername "$ip" 2>/dev/null \
       | openssl x509 -noout -subject -issuer -enddate 2>/dev/null \
-      | awk -F'=' '/subject/{sub=""; for(i=2;i<=NF;i++) sub=sub$i"="; print sub} /enddate/{print "exp:"$2}' \
+      | awk -F'=' '/subject/{s=""; for(i=2;i<=NF;i++) sub=s$i"="; print s} /enddate/{print "exp:"$2}' \
       | tr '\n' ' ' | cut -c1-60)
     [[ -z "$ssl_info" ]] && ssl_info="N/A"
     echo "HTTPS|$ip|$port|$code|${title:-N/A}|${server:-Unknown}|${tech}|${ssl_info}" >> "$WEB_OUT"
